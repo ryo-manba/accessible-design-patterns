@@ -2,10 +2,10 @@ import './radio-button.js';
 import './radio-group.js';
 
 export default {
-  title: 'patterns/RadioGroup',
+  title: 'Patterns/RadioGroup',
 };
 
-export const Example = () => {
+export const RadioGroupExample = () => {
   return `
     <radio-group aria-labelledby="group_label_1" id="rg1">
       <h3 id="group_label_1">Pizza Crust</h3>
@@ -22,7 +22,48 @@ export const Example = () => {
     `;
 };
 
-export const Default = () => {
+// TODO: unimplemented
+export const ToolbarContainedRadioGroup = () => {
+  return `
+    <div style="padding: 10px; background-color: #f0f0f0;">
+      <div role="toolbar" aria-label="Toolbar with Radio Group">
+        <div class="group characteristics">
+          <button type="button" class="item bold" aria-pressed="false" value="bold" tabindex="0">
+            <span class="icon bold" aria-hidden="true"></span>
+            <span class="label">Bold</span>
+          </button>
+          <button type="button" class="item italic" aria-pressed="false" value="italic" tabindex="-1">
+            <span class="icon italic" aria-hidden="true"></span>
+            <span class="label">Italic</span>
+          </button>
+          <button type="button" class="item underline" aria-pressed="false" value="underline" tabindex="-1">
+            <span class="icon underline" aria-hidden="true"></span>
+            <span class="label">Underline</span>
+          </button>
+        </div>
+        <!-- Custom Radio Group for Text Alignment -->
+        <radio-group aria-label="Text Alignment">
+          <radio-button>
+            <span>Text Align Left</span>
+          </radio-button>
+          <radio-button>
+            <span class="label">Text Align Center</span>
+          </radio-button>
+          <radio-button>
+            <span class="label">Text Align Right</span>
+          </radio-button>
+        </radio-group>
+        <button type="button">Copy</button>
+        <button type="button">Paste</button>
+        <button type="button">Cut</button>
+      </div>
+      <!-- Textarea Element -->
+      <textarea id="textarea1" aria-label="Text Area" rows="4" cols="50"></textarea>
+    </div>
+  `;
+};
+
+export const RadioGroupWithStandardInputs = () => {
   return `
     <div>
       <h2 id="drink-options-label">What is your favorite drink?(Original Radio Input)</h2>
@@ -59,29 +100,5 @@ export const Default = () => {
       <button type="submit">Submit</button>
     </form>
   </div>
-  `;
-};
-
-export const InputTypeRadio = () => {
-  return `
-    <div>
-      <h2>What is your favorite drink? (Standard Radio Input)</h2>
-      <form>
-        <input type="text" placeholder="Other">
-        <div>
-          <input type="radio" id="water" name="drink" value="Water">
-          <label for="water">Water</label><br>
-          <input type="radio" id="coffee" name="drink" value="Coffee">
-          <label for="coffee">Coffee</label><br>
-          <input type="radio" id="tea" name="drink" value="Tea">
-          <label for="tea">Tea</label><br>
-          <input type="radio" id="cola" name="drink" value="Cola">
-          <label for="cola">Cola</label><br>
-          <input type="radio" id="ginger-ale" name="drink" value="Ginger Ale">
-          <label for="ginger-ale">Ginger Ale</label>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
   `;
 };
