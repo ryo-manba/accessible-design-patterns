@@ -1,10 +1,3 @@
-// Define values for keycodes
-const VK_SPACE = 32;
-const VK_LEFT = 37;
-const VK_UP = 38;
-const VK_RIGHT = 39;
-const VK_DOWN = 40;
-
 /**
  * reference: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
  */
@@ -31,33 +24,35 @@ class RadioGroup extends HTMLElement {
   }
 
   handleKeyDown(e) {
-    switch (e.keyCode) {
-      case VK_SPACE: {
+    const target = e.target;
+    const targetIndex = this.radios.indexOf(target);
+    switch (e.key) {
+      case ' ': {
         if (this.selected === undefined) {
-          this.selected = 0;
+          this.selected = targetIndex;
         }
         break;
       }
-      case VK_UP:
-      case VK_LEFT: {
+      case 'ArrowUp':
+      case 'ArrowLeft': {
         e.preventDefault();
 
-        if (this.selected === 0) {
+        if (targetIndex === 0) {
           this.selected = this.radios.length - 1;
         } else {
-          this.selected--;
+          this.selected = targetIndex - 1;
         }
         break;
       }
 
-      case VK_DOWN:
-      case VK_RIGHT: {
+      case 'ArrowDown':
+      case 'ArrowRight': {
         e.preventDefault();
 
-        if (this.selected === this.radios.length - 1) {
+        if (targetIndex === this.radios.length - 1) {
           this.selected = 0;
         } else {
-          this.selected++;
+          this.selected = targetIndex + 1;
         }
         break;
       }
