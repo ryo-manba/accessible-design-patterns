@@ -1,3 +1,4 @@
+import './radio-group.css';
 /**
  * reference: https://www.w3.org/WAI/ARIA/apg/patterns/radio/
  */

@@ -5,43 +5,25 @@ export default {
   title: 'patterns/RadioGroup',
 };
 
+export const Example = () => {
+  return `
+    <radio-group aria-labelledby="group_label_1" id="rg1">
+      <h3 id="group_label_1">Pizza Crust</h3>
+      <radio-button>Regular crust</radio-button>
+      <radio-button>Thin crust</radio-button>
+      <radio-button>Deep dish</radio-button>
+    </radio-group>
+    <radio-group aria-labelledby="group_label_2" id="rg2">
+      <h3 id="group_label_2">Pizza Delivery</h3>
+      <radio-button>Pickup</radio-button>
+      <radio-button>Home Delivery</radio-button>
+      <radio-button>Dine in</radio-button>
+    </radio-group>
+    `;
+};
+
 export const Default = () => {
   return `
-    <style>
-    radio-group {
-      display: flex;
-      flex-flow: column;
-      padding-left: 20px;
-    }
-
-    radio-button {
-      position: relative;
-    }
-
-    radio-button::before {
-      content: '';
-      display: block;
-      width: 10px;
-      height: 10px;
-      border: 1px solid #000;
-      position: absolute;
-      left: -18px;
-      top: 3px;
-      border-radius: 50%;
-    }
-    radio-button[aria-checked='true']::after {
-      content: '';
-      display: block;
-      width: 8px;
-      height: 8px;
-      background: blue;
-      position: absolute;
-      left: -16px;
-      top: 5px;
-      border-radius: 50%;
-    }
-
-    </style>
     <div>
       <h2 id="drink-options-label">What is your favorite drink?(Original Radio Input)</h2>
       <div id="drink-options-desc">Each option may contain caffeine.</div>
