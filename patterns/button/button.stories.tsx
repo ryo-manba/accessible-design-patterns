@@ -1,4 +1,5 @@
 import './button.js';
+import './toggle-button.js';
 
 const meta = {
   title: 'Patterns/Button',
@@ -23,6 +24,21 @@ export const Default = () => {
       }
       function handleCustomClick() {
         console.log('Custom button clicked');
+      }
+    </script>
+  `;
+};
+
+export const ToggleButton = () => {
+  return `
+    <div>
+      <h3>Toggle Button</h3>
+      <toggle-button id="toggle-button1" onclick='handleCustomClick()''>Mute</toggle-button>
+      <toggle-button id="toggle-button2" onclick='handleCustomClick()''>Mute</toggle-button>
+    </div>
+    <script>
+      function handleCustomClick() {
+        console.log('Toggle button clicked');
       }
     </script>
   `;
